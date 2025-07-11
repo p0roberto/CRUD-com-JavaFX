@@ -1,6 +1,6 @@
 # CRUD JavaFX para Cachorros
 
-Aplicação JavaFX que realiza operações CRUD (Create, Read, Update, Delete) em um banco de dados SQLite para gerenciar informações de cachorros.
+Aplicação JavaFX que realiza operações CRUD (Create, Read, Update, Delete) em um banco de dados SQLite para gerenciar informações de cachorros e donos.
 
 ---
 
@@ -60,7 +60,7 @@ view.AppView
 
 ## 📋 Funcionalidades
 
-- ✅ Adicionar novos cachorros
-- ✅ Visualizar todos os cachorros cadastrados
-- ✅ Atualizar informações de cachorros existentes
-- ✅ Remover cachorros do sistema
+- ✅ Adicionar novos cachorros e donos
+- ✅ Visualizar todos os cachorros e donos cadastrados
+- ✅ Atualizar informações de cachorros e donos existentes
+- ✅ Remover cachorros e donos do sistema
