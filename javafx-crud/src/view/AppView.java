@@ -7,28 +7,25 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class AppView extends Application {
-    
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            // Correção principal: inicializar o FXMLLoader com o caminho correto
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/app.fxml"));
-            
-            AnchorPane pane = loader.load();  // Removi o tipo genérico pois não é necessário
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/menu.fxml"));
+            AnchorPane pane = loader.load();
             Scene scene = new Scene(pane);
-            
+
             primaryStage.setScene(scene);
-            primaryStage.setTitle("CRUD Cachorros");
+            primaryStage.setTitle("Menu Principal");
             primaryStage.show();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
-            // Adicione isto para ver detalhes do erro de carregamento
             System.err.println("Erro ao carregar o FXML: " + e.getMessage());
-            throw e; // Re-lança a exceção para ver o stacktrace completo
+            throw e;
         }
     }
-    
+
     public static void main(String[] args) {
         launch(args);
     }

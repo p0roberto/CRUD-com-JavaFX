@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MenuController">
+    <children>
+        <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <children>
+                <Label text="Menu Principal" style="-fx-font-size: 24; -fx-font-weight: bold;" />
+                <Button text="Gerenciar Cachorros" onAction="#abrirTelaCachorro" />
+                <Button text="Gerenciar Donos" onAction="#abrirTelaDono" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
