@@ -10,11 +10,9 @@ import java.util.ArrayList;
 public class CachorroRepository {
     private static Database database;
     private static Dao<Cachorro, Integer> dao;
-    private List<Cachorro> cachorros;
 
     public CachorroRepository(Database database) {
         CachorroRepository.database = database;
-        cachorros = new ArrayList<>();
         try {
             dao = DaoManager.createDao(database.getConnection(), Cachorro.class);
             TableUtils.createTableIfNotExists(database.getConnection(), Cachorro.class);
@@ -26,7 +24,6 @@ public class CachorroRepository {
     public Cachorro create(Cachorro cachorro) {
         try {
             dao.create(cachorro);
-            cachorros.add(cachorro);
         } catch (SQLException e) {
             System.out.println("Erro ao criar cachorro: " + e.getMessage());
         }
@@ -44,7 +41,6 @@ public class CachorroRepository {
     public void delete(Cachorro cachorro) {
         try {
             dao.delete(cachorro);
-            cachorros.remove(cachorro);
         } catch (SQLException e) {
             System.out.println("Erro ao deletar cachorro: " + e.getMessage());
         }
@@ -66,5 +62,14 @@ public class CachorroRepository {
             System.out.println("Erro ao carregar todos os cachorros: " + e.getMessage());
         }
         return new ArrayList<>();
+    }
+
+    public long count() {
+        try {
+            return dao.countOf();
+        } catch (SQLException e) {
+            System.out.println("Erro ao contar cachorros: " + e.getMessage());
+            return 0;
+        }
     }
 }

@@ -60,6 +60,18 @@ public class DonoRepository {
         return null;
     }
 
+    public Dono loadFromIdByName(String nome) {
+        try {
+            List<Dono> resultados = dao.queryForEq("nome", nome);
+            if (!resultados.isEmpty()) {
+                return resultados.get(0);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar dono por nome: " + e.getMessage());
+        }
+        return null;
+    }
+
     public List<Dono> loadAll() {
         try {
             return dao.queryForAll();

@@ -7,28 +7,30 @@ public class CachorroView {
     private final StringProperty nome;
     private final IntegerProperty idade;
     private final DoubleProperty peso;
+    private final StringProperty nomeDono;
 
-    public CachorroView(int id, String nome, int idade, double peso) {
+    public CachorroView(int id, String nome, int idade, double peso, String nomeDono) {
         this.id = new SimpleIntegerProperty(id);
         this.nome = new SimpleStringProperty(nome);
         this.idade = new SimpleIntegerProperty(idade);
         this.peso = new SimpleDoubleProperty(peso);
+        this.nomeDono = new SimpleStringProperty(nomeDono);
     }
 
-    // Getters
     public int getId() { return id.get(); }
     public String getNome() { return nome.get(); }
     public int getIdade() { return idade.get(); }
     public double getPeso() { return peso.get(); }
+    public String getNomeDono() { return nomeDono.get(); }
 
-    // Setters
     public void setNome(String nome) { this.nome.set(nome); }
     public void setIdade(int idade) { this.idade.set(idade); }
     public void setPeso(double peso) { this.peso.set(peso); }
+    public void setNomeDono(String nomeDono) { this.nomeDono.set(nomeDono); }
 
-    // Property getters
     public IntegerProperty idProperty() { return id; }
     public StringProperty nomeProperty() { return nome; }
     public IntegerProperty idadeProperty() { return idade; }
     public DoubleProperty pesoProperty() { return peso; }
+    public StringProperty nomeDonoProperty() { return nomeDono; }
 }
